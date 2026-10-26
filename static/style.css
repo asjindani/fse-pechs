@@ -1,0 +1,116 @@
+body {
+    font-family: sans-serif;
+    background: url('bg.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+.card {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    max-height: calc(100vh - 120px);
+}
+.card h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+.card label {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+.card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.card button {
+    width: 100%;
+    padding: 14px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.card button:hover {
+    background-color: #0056B3;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.nav-left img {
+    height: 40px;        
+}
+
+.nav-btn {
+    display: inline-block;
+    text-decoration: none;
+    width: auto; 
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-btn {
+    background-color: transparent;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    padding: 6px 18px;
+}
+
+.login-btn:hover {
+    background-color: #f0f8ff;
+    color: #0056b3;
+}

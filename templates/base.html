@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} - Cedar Web App</title>
+        <link rel="stylesheet" href="{{
+            url_for('static', filename='style.css')
+        }}">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-left">
+                <img src="{{
+                    url_for('static', filename='logo.webp')
+                }}" alt="Cedar College Logo">
+                <span>Cedar Web App</span>
+            </div>
+            <div class="nav-center">
+                    {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% for color, message in messages %}
+                        <p style="color: {{color}}; font-size: 2em;">{{ message }}</p>
+                    {% endfor %}
+                    {% endwith %}
+            </div>
+            <div class="nav-right">
+                {% if session.get("username") %}
+                    <a href="{{ url_for('dashboard') }}" class="nav-btn">Dashboard</a>
+                    <a href="{{ url_for('logout') }}" class="nav-btn login-btn">Logout</a>
+                {% else %}
+                <a href="{{ url_for('login') }}" class="nav-btn login-btn">Login</a>
+                <a href="{{ url_for('signup') }}" class="nav-btn">Sign Up</a>
+                {% endif %}
+            </div>
+        </nav>
+        <main>
+            <div class="card">
+                {% block card %}
+                {% endblock %}
+            </div>
+        </main>
+    </body>
+</html>

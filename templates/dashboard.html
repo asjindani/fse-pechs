@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block card %}
+
+<h1>Dashboard</h1>
+
+<h2>All Posts</h2>
+
+{% for post in all_posts %}
+    <p>{{ post.content }} (Posted by {{ post.author.name }})</p>
+{% endfor %}
+
+<h2>Your Posts</h2>
+
+{% for post in user.posts %}
+    <p>{{ post.content }}</p>
+{% endfor %}
+
+<form method="POST">
+    <h2>New Post</h2>
+    <textarea name="content" placeholder="Enter post contents here..."></textarea>
+    <button name="new-post" type="submit">New Post</button>
+</form>
+
+{% endblock %}
